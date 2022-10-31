@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  currency-exchange:
+    image: egelirli/mmv2-currency-exchange-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    networks:
+      - currency-network
+
+  currency-conversion-service:
+    image: egelirli/mmv2-currency-conversion-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8100:8100"
+    networks:
+      - currency-network
+
+
+networks:
+  currency-network:
+  
+  
